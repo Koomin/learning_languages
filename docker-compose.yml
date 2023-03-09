@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  languages-web:
+    restart: always
+    container_name: languages-web
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
+    env_file:
+      - ./.env
+    depends_on:
+      - languages-db
+    command: python manage.py runserver 0.0.0.0:8081
+  languages-db:
+      restart: always
+      container_name: languages-db
+      image: postgres:13.0-alpine
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      env_file:
+        - ./.env.db
+volumes:
+  postgres_data:
+
