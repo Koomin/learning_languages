@@ -9,6 +9,6 @@ DATABASES = {
         'HOST': get_env_variable('DB_HOST'),
         'USER': get_env_variable('DB_USER'),
         'PASSWORD': get_env_variable('DB_PASSWORD'),
-        'PORT': get_env_variable('DB_PORT')
+        'PORT': get_env_variable('DB_PORT'),
     }
 }
