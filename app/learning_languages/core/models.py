@@ -1,5 +1,6 @@
 import uuid as uuid_lib
 
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
@@ -10,3 +11,7 @@ class CoreModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+class CoreUser(AbstractUser, CoreModel):
+    pass
