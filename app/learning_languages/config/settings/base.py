@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'learning_languages.core',
     'learning_languages.languages',
+    'learning_languages.translations',
 ]
 
 MIDDLEWARE = [
