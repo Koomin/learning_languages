@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'learning_languages.core',
+    'learning_languages.languages',
 ]
 
 MIDDLEWARE = [
