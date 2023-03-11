@@ -16,5 +16,5 @@ class CoreModel(models.Model):
 
 class CoreUser(AbstractUser, CoreModel):
     translated_words = models.IntegerField(default=0)
-    today_translated_word = models.IntegerField(default=0)
+    today_translated_words = models.IntegerField(default=0)
     daily_limit = models.IntegerField(default=50)
