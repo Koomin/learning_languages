@@ -30,3 +30,12 @@ repos:
       - id: flake8
         exclude: app/learning_languages/config/settings/
         args: ['--max-line-length=120', '--config=setup.cfg']
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        pass_filenames: false
+        always_run: true
