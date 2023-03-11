@@ -17,3 +17,12 @@ class TranslationFactory(factory.django.DjangoModelFactory):
 
     original_word = factory.SubFactory(WordFactory)
     translated_word = factory.SubFactory(WordFactory)
+
+    @factory.post_generation
+    def users(self, create, extracted):
+        if not create:
+            return
+
+        if extracted:
+            for user in extracted:
+                self.users.add(user)

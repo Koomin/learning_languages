@@ -1,6 +1,8 @@
 import uuid
 
 import pytest
+from learning_languages.core.tests.factories import CoreUserFactory
+from pytest_factoryboy import register
 
 
 @pytest.fixture
@@ -27,8 +29,14 @@ def api_client():
 
 
 @pytest.fixture
-def api_client_authorized(db, api_client, create_user):
+def api_client_authorized(db, create_user):
+    from rest_framework.test import APIClient
+
+    api_client = APIClient()
     user = create_user()
     api_client.force_authenticate(user=user)
     yield api_client
     api_client.force_authenticate(user=None)
+
+
+register(CoreUserFactory)

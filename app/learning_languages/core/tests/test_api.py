@@ -21,3 +21,4 @@ def test_user_details(api_client_authorized, create_user):
     assert response.status_code == 200
     assert user.username == response.data.get('username')
     assert user.uuid.__str__() == response.data.get('uuid')
+    assert CoreUserSerializer(user).data == response.data
