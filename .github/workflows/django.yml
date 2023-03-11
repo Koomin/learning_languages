@@ -30,4 +30,4 @@ jobs:
         DEBUG: "0"
         DJANGO_SETTINGS_MODULE: "learning_languages.config.settings.local"
       run: |
-        pwd
+        ls -la
